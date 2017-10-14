@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="timeline/source/timeline.css">
+</head>
+<body>
+<div id="replay-source"></div>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="timeline/jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="timeline/timeline.js"></script>
+<script type="text/javascript">
+	$('#replay-source').timeline({
+        // 最小缩放指数
+        minZoom: 0,
+        // 最大缩放指数
+        maxZoom: 360,
+        // 高亮部分点击事件
+        HLclick: function(time, win, data)
+        {
+            /*
+             * if(bool){Utils.replayOCX.recPlay(data.devcode,time);bool=false}
+             * else{ Utils.replayOCX.seek(win,time); }
+             */
+            /*if($('.win').eq(win).data('isPlay')){
+                Utils.replayOCX.seek(Number(win)+1,data.rec[0].starttime.slice(0,11)+time);
+            }
+            else{
+                var day = data.rec[0].endtime.slice(0,11);
+                var startTime = day+time;
+                var endTime = day+'23:59:59';
+                Utils.replayOCX.recPlay(Number(win)+1,data.devname,data.devid,data.devcode, data.rec[0].starttime,endTime);
+                $('.win').eq(win).data('isPlay',true);
+                Utils.replayOCX.seek(Number(win)+1,data.rec[0].starttime.slice(0,11)+time);
+            }*/
+        },
+        HLdbclick: function(time, win, data)
+        {
+            /*
+             * if(bool){Utils.replayOCX.recPlay(data.devcode,time);bool=false}
+             * else{ Utils.replayOCX.seek(win,time); }
+             */
+            /*var day = data.rec[0].endtime.slice(0,11);
+            var startTime = day+time;
+            var endTime = day+'23:59:59';
+            Utils.replayOCX.recPlay(Number(win)+1,data.devname,data.devid,data.devcode, data.rec[0].starttime,endTime);
+            $('.win').eq(win).data('isPlay',true);
+            Utils.replayOCX.seek(Number(win)+1,startTime);*/
+        },
+        winClick: function(index, hasData){
+            /*Utils.replayOCX.selectWin(index+1,hasData);*/
+        }
+    });
+</script>
+</body>
+</html>
